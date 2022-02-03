@@ -1,9 +1,19 @@
 console.log("works")
 var i = 0
-var alphabet = ["A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "V", "U", "W", "X", "Y", "Z"]
-var codeWord = ""
+var alphabet = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z"]
+var letterList = "";
+var codeWord = "";
 while(i<=3){
-    codeWord += alphabet[Math.floor(Math.random())]
-    console.log(codeWord)
+    if(i===0){
+        letterList = alphabet;
+    }
+    var index=Math.floor(Math.random()*letterList.length)
+    codeWord += letterList[index]
+    letterList.splice(index, 1);
+    console.log(codeWord + " " + letterList + " " + index)
     i++
+    if(i>=3){
+        $("#outputDebug").text(codeWord);
+    }
 }
+
