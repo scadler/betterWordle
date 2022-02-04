@@ -21,4 +21,4 @@ $("#debugButton").click(function(){
     if(guess === codeWord){
         console.log("works")
     }
-});
+}); 
