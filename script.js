@@ -15,10 +15,11 @@ while(i<=3){
         $("#outputDebug").text(codeWord);
     }
 }
+
 $("#debugButton").click(function(){
     var guess = $("#guessOne").val().toUpperCase();
     console.log(guess)
     if(guess === codeWord){
         console.log("works")
     }
-}); 
+});
