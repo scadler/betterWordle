@@ -1,7 +1,11 @@
 var i = 0
 var alphabet = ["B", "C", "D", "F", "G", "H", "J", "K", "L", "M", "N", "P", "Q", "R", "S", "T", "V", "W", "X", "Z"]
-var letterList = "";
-var codeWord = "";
+var letterList = [""];
+var codeWord = [""];
+var state = {
+    guessNumber: 0,
+    codeWordIndex: [""],
+}
 while(i<=3){
     if(i===0){
         letterList = alphabet;
@@ -18,7 +22,10 @@ while(i<=3){
 
 $("#debugButton").click(function(){
     var guess = $("#guessOne").val().toUpperCase();
+    
     console.log(guess)
+    $("#attemptsContainer").append(`<div id="guess${state.guessNumber}" class="guess"><h1>${guess}</h1></div>`);
+    state.guessNumber++
     if(guess === codeWord){
         console.log("works")
     }
